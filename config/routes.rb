@@ -3,4 +3,17 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  root "questions#index"
+
+  resources :episodes
+
+  resources :questions
+
+  get 'questionresult_result/:question_id/:episode_id', to: 'questions#result', as: :question_result
+
+  post 'grade/:question_id/:episode_id', to: 'questions#grade', as: :question_result_post
+  get 'show_grade/:result', to: 'questions#show_grade', as: :show_grade
+
+
 end

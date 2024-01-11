@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="text-3xl font-bold my-6">SpongeBob Quotely</h1>
+
+<div class="grid grid-cols-2 gap-8">
+  <div id="question" class="border border-1 border-black rounded p-4">
+    <h2 class="text-2xl font-bold">Quote</h2>
+    <%= render @question %>
+  </div>
+
+  <div id="season-selector" class="border border-1 border-black rounded p-4">
+  <h2 class="text-2xl font-bold">Episodes</h2>
+    <%= render partial: 'episodes/seasons', locals: {episodes: @episodes, question: @question, season: @season} %>
+  </div>
+
+
+<%= link_to "New question", new_question_path, class: "text-blue-600" %>
+<%= link_to "New episode", new_episode_path, class: "text-blue-600" %>

@@ -1,0 +1,26 @@
+<div id="episodes" class="my-4 grid grid-cols-3 gap-2">
+
+
+
+
+  <div>
+    <%= form_tag(:root, method: :get) do %>
+      <% (1..4).each do |s| %>
+        <%= button_tag "Season #{s}", type: 'submit', name: 'season', value: "#{s}", class: "#{s == @season.to_i ? ' my-1 border p-2 bg-indigo-100 hover:bg-indigo-200' : 'my-1 border p-2 hover:bg-gray-100' }" %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="episodes" class="col-span-2">
+    <% @episodes.each do |episode| %>
+    <%= link_to episode.title, question_result_path(@question.id, episode.id), class: 'block hover:bg-gray-100 p-2 my-1 rounded border border-black' %>
+
+      <%
+=begin%>
+ <%= button_to episode.title, question_result_post_path(@question.id, episode.id), method: :post, class: 'block hover:bg-gray-100 p-2 my-1 rounded border border-black' %>
+<%
+=end%>
+
+    <% end %>
+  </div>
+</div>
