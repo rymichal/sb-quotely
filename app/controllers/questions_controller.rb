@@ -4,8 +4,8 @@ class QuestionsController < ApplicationController
   # GET /questions or /questions.json
   def index
     @season = params[:season] || '1'
-    @question = Question.find(2)
-    @episodes = Episode.where(season: @season).order(:number)
+    @question = Question.find(1)
+    @episodes = Episode.where(season: @season).order(:episode)
   end
 
   # GET /questions/1 or /questions/1.json

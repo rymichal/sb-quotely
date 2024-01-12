@@ -14,7 +14,7 @@ class EpisodesTest < ApplicationSystemTestCase
     visit episodes_url
     click_on "New episode"
 
-    fill_in "Number", with: @episode.number
+    fill_in "Episode", with: @episode.episode
     fill_in "Season", with: @episode.season
     fill_in "Title", with: @episode.title
     click_on "Create Episode"
@@ -27,7 +27,7 @@ class EpisodesTest < ApplicationSystemTestCase
     visit episode_url(@episode)
     click_on "Edit this episode", match: :first
 
-    fill_in "Number", with: @episode.number
+    fill_in "Episode", with: @episode.episode
     fill_in "Season", with: @episode.season
     fill_in "Title", with: @episode.title
     click_on "Update Episode"

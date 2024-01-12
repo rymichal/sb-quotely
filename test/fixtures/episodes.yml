@@ -2,10 +2,10 @@
 
 one:
   season: 1
-  number: 1
+  episode: 1
   title: MyString
 
 two:
   season: 1
-  number: 1
+  episode: 1
   title: MyString
