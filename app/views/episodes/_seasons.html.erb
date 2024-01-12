@@ -13,14 +13,7 @@
 
   <div id="episodes" class="col-span-2">
     <% @episodes.each do |episode| %>
-    <%= link_to episode.title, question_result_path(@question.id, episode.id), class: 'block hover:bg-gray-100 p-2 my-1 rounded border border-black' %>
-
-      <%
-=begin%>
- <%= button_to episode.title, question_result_post_path(@question.id, episode.id), method: :post, class: 'block hover:bg-gray-100 p-2 my-1 rounded border border-black' %>
-<%
-=end%>
-
+    <%= button_to episode.title, question_result_post_path(@question.id, episode.id), class: 'block hover:bg-gray-100 p-2 my-1 rounded border border-black' %>
     <% end %>
   </div>
 </div>

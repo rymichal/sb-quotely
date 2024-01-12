@@ -21,18 +21,14 @@ class QuestionsController < ApplicationController
   def edit
   end
 
-  def result
-    @question = Question.find(params[:question_id])
-    @episode = Episode.find(params[:episode_id])
+  # def result
+  #   @question = Question.find(params[:question_id])
+  #   @episode = Episode.find(params[:episode_id])
 
-    @question.inspect
+  #   @question.inspect
 
-    @result = @question.episode == @episode
-  end
-
-  def show_grade(result)
-    @result = result
-  end
+  #   @result = @question.episode == @episode
+  # end
 
   # POST /questions/${question_id}/${episode_id}/grade
   def grade
@@ -41,9 +37,8 @@ class QuestionsController < ApplicationController
 
     @result = @question.episode == @episode
 
-    respond_to do |format|
-      format.html { render :show_grade }
-    end
+    redirect_to :root, notice: "You got it!" if @result
+    redirect_to :root, notice: "Yikes. Embarrassing. Wrong." if !@result
   end
 
 
