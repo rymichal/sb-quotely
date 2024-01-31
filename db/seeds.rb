@@ -184,3 +184,15 @@ Episode.create(
     {"episode": 80.2, "season": 4, "title": "The Gift of Gum"}
   ]
 )
+
+# seed questions
+Question.create(
+  [
+    {
+      one: "SpongeBob: (laughs then turns around) Alright, give me the money!",
+      two: "Bank Teller: Will that be from your savings or your checking account, sir?",
+      three: "SpongeBob: Uhh, savings.",
+      episode_id: 90,
+    },
+  ]
+)
