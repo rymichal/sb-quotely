@@ -10,7 +10,7 @@ RUN bundle install
 
 ADD . /docker/app
 
-ARG DEFAULT_PORT 80
+ARG DEFAULT_PORT 3000
 
 EXPOSE ${DEFAULT_PORT}
 
